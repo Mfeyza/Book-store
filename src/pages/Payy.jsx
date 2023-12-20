@@ -41,19 +41,19 @@ const Payy = () => {
         (acc, book) => book?.saleInfo?.retailPrice?.amount * book.quantity + acc,
         0
       );
-      const discountAmount = subTotal * discount;
-      const total = subTotal - discountAmount + shipping;
+      const discountA = subTotal * discount;
+      const total = subTotal - discountA + shipping;
       const increase = (bookId) => {
-        setBooks(currentBooks =>
-          currentBooks.map(book =>
+        setBooks(CBooks =>
+          CBooks.map(book =>
             book.id === bookId ? { ...book, quantity: book.quantity + 1 } : book
           )
         );
       };
       
       const decrease = (bookId) => {
-        setBooks(currentBooks =>
-          currentBooks.map(book =>
+        setBooks(CBooks =>
+          CBooks.map(book =>
             book.id === bookId && book.quantity > 1
               ? { ...book, quantity: book.quantity - 1 }
               : book
@@ -61,9 +61,9 @@ const Payy = () => {
         );
       };
       const removeBook = (bookId) => {
-        const updatedBooks = books.filter(book => book.id !== bookId);
-        setBooks(updatedBooks);
-        localStorage.setItem('selectedBooks', JSON.stringify(updatedBooks));
+        const updateBooks = books.filter(book => book.id !== bookId);
+        setBooks(updateBooks);
+        localStorage.setItem('selectedBooks', JSON.stringify(updateBooks));
       };
     return (
       <div className='d-flex flex-row w-100 gap-5'>
