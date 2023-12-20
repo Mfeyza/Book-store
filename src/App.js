@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from "./pages/Home";
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import BookDetails from "./pages/BookDetails";
+import Login from "./pages/Login";
+import NavbarBook from "./components/NavbarBook";
+import FooterBook from "./components/FooterBook";
+import ElektronikP from "./pages/ElektronikP";
+import Kirtasiye from "./pages/Kirtasiye";
+import Payy from "./pages/Payy";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App d-flex  flex-column justify-content-space-between ">
+      <NavbarBook />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/ElektronikP" element={<ElektronikP/>}/>
+        <Route path="/Kirtasiye" element={<Kirtasiye/>}/>
+        
+
+
+        <Route path="/BookDetails/:id" element={<BookDetails />} />
+        <Route path="/Payy/" element={<Payy />} />
+        
+        <Route path="/login" element={<Login />} />
+        
+        
+      </Routes>
+      
+      <FooterBook className="footer" />
     </div>
   );
 }
