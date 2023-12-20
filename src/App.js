@@ -11,6 +11,7 @@ import Payy from "./pages/Payy";
 
 
 
+
 function App() {
   return (
     <div className="App d-flex  flex-column justify-content-space-between ">
@@ -26,7 +27,7 @@ function App() {
         <Route path="/Payy/" element={<Payy />} />
         
         <Route path="/login" element={<Login />} />
-        
+       
         
       </Routes>
       

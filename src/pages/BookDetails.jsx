@@ -42,11 +42,11 @@ const BookDetails = () => {
 
   const { volumeInfo, saleInfo } = book;
   const handleBuyButtonClick = () => {
-    // Öncelikle mevcut kitapları localStorage'dan al
+    //! Öncelikle mevcut kitapları localStorage'dan al
     const savedBooks = JSON.parse(localStorage.getItem('selectedBooks')) || [];
-    // Yeni kitabı diziye ekle
+    //! Yeni kitabı diziye ekle
     savedBooks.push(book);
-    // Yeni diziyi localStorage'a kaydet
+    //! Yeni diziyi localStorage'a kaydet
     localStorage.setItem('selectedBooks', JSON.stringify(savedBooks));
     navigate('/Payy');
   };

@@ -47,7 +47,7 @@ const Login = () => {
       </Col>
      
       <div className='d-flex flex-row'>
-      <Button className="button1 mx-auto d-flex justify-content-center" type="submit">Giriş</Button>
+      <Button className="button1 mx-auto d-flex justify-content-center" type="submit"onClick={() => navigate("/Payy")}>Giriş</Button>
       <Button className="button mx-auto d-flex justify-content-center" variant="primary"onClick={() => navigate("/")}>Geri</Button>
       </div>
       

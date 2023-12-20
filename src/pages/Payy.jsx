@@ -19,10 +19,10 @@ const Payy = () => {
     useEffect(() => {
         setLoading(true);
         const savedBooks = JSON.parse(localStorage.getItem('selectedBooks')) || [];
-        // Her kitaba ait miktarı ekle
+        //! her kitaba ait miktarı ekle
         const booksWithQuantities = savedBooks.map(book => ({
           ...book,
-          quantity: 1 // Başlangıçta her kitabın miktarı 1
+          quantity: 1 //! bşlangıçta her kitabın miktarı 1
         }));
         setBooks(booksWithQuantities);
         setLoading(false);
@@ -32,7 +32,7 @@ const Payy = () => {
     }
   
     if (!books.length) {
-      return <p>No books in cart.</p>;
+      return <p>Sepete Ürün Ekle.</p>;
     }
   
     const discount = 0.20;
