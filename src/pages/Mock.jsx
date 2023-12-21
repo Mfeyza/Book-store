@@ -60,7 +60,7 @@ const Mock = () => {
 
   return (
     <div>
-        <div className='d-flex flex-row justify-content-evenly align-items-center'>
+        <div className='d-flex flex-row justify-content-evenly align-items-center flex-wrap'>
     <article className="mb-4 mt-4 form ">
       <h1 className="text-center">Ürün Ekle</h1>
       <form className="p-2" onSubmit={handleSubmit}>
