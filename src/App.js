@@ -8,6 +8,8 @@ import FooterBook from "./components/FooterBook";
 import ElektronikP from "./pages/ElektronikP";
 import Kirtasiye from "./pages/Kirtasiye";
 import Payy from "./pages/Payy";
+import Hakkimizda from "./pages/Hakkimizda"
+import Mock from "./pages/Mock"
 
 
 
@@ -27,6 +29,8 @@ function App() {
         <Route path="/Payy/" element={<Payy />} />
         
         <Route path="/login" element={<Login />} />
+        <Route path="/Hakkimizda" element={<Hakkimizda/>}/>
+        <Route path="/Mock" element={<Mock/>}/>
        
         
       </Routes>

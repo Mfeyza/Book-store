@@ -26,7 +26,7 @@ const Rate = () => {
       
       
   return (
-    <div  >
+    <div className='ms-5'  >
     <p>
       <strong>USD:</strong>   {rate.USD ? rate.USD.Alış : "Yükleniyor..."}{rate.USD && (rate.USD.Değişim.includes('-') ? <FontAwesomeIcon icon={faCaretDown} fade style={{color: "#e21232",fontSize:"30px"}} /> :  <FontAwesomeIcon icon={faCaretUp} fade style={{color: "#31bf4d",fontSize:"30px"}} />)}
       </p>

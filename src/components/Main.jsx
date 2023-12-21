@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Rate from "../pages/Rate";
+import Weather from "../pages/Weather";
 
 const Main = ({ books, setBooks, setLoading }) => {
   const [input, setInput] = useState("");
@@ -36,7 +38,8 @@ const Main = ({ books, setBooks, setLoading }) => {
   }, [input]); //!inputta göre isteği tekrar at.
 
   return (
-    <div className="d-flex justify-content-center align-items-center mt-5  ">
+    <div className="d-flex justify-content-between align-items-center mt-5 flex-row ">
+       <Rate />
       <div className="searchbox">
         <FontAwesomeIcon icon={faMagnifyingGlass} className="searchicon" />
         <input
@@ -49,6 +52,7 @@ const Main = ({ books, setBooks, setLoading }) => {
           }}
         />
       </div>
+      <Weather className="weather" />
     </div>
   );
   // }

@@ -40,7 +40,7 @@ const BookList = ({ book, setBook,loading }) => {
             <Card.Img
               variant="top"
               src={book?.volumeInfo?.imageLinks?.thumbnail || myimg}
-              style={{ height: "16rem", width: "16rem", objectFit: "cover" }}
+              style={{ height: "16rem", width: "18rem", objectFit: "cover" }}
             />
             <Card.Body className="d-flex flex-column justify-content-between">
               <Card.Title>{book?.volumeInfo?.title}</Card.Title>

@@ -17,6 +17,11 @@
     justify-content: space-between;
 	
 }
+.card-title {
+	height: 3rem; 
+	overflow: hidden; 
+  }
+  
 
 
 .carousel-item{
@@ -49,15 +54,9 @@ body{
     display: flex;
 
 }
-.kapsayıcı{
-    max-height: 100vh;
-	max-width: 100%;
-	width: 100%;
-	flex-grow: 1;
-    display: flex;
-	
 
-}
+ 
+ 
 .desc {
 	max-height: 3em; 
 	overflow-y: auto; 
@@ -178,9 +177,9 @@ span.page-link{
 	   -moz-box-sizing:border-box;
 	        box-sizing:border-box;
 	min-width:100px;
-	padding: 22px 33px;
+	padding: 10px;
 	font-family: 'Lobster', cursive;
-	font-size: 26px;
+	font-size: 16px;
 	line-height: 26px;
 	text-decoration: none;
 	color: #FFF;

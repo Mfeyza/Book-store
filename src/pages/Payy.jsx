@@ -38,7 +38,7 @@ const Payy = () => {
     const discount = 0.20;
     const shipping = 25;
     const subTotal = books.reduce(
-        (acc, book) => book?.saleInfo?.retailPrice?.amount * book.quantity + acc,
+        (acc, book) => (book?.saleInfo?.retailPrice?.amount || 100) * book.quantity + acc,
         0
       );
       const discountA = subTotal * discount;
@@ -65,19 +65,24 @@ const Payy = () => {
         setBooks(updateBooks);
         localStorage.setItem('selectedBooks', JSON.stringify(updateBooks));
       };
+      const clear = () => {
+        setBooks([]); 
+        localStorage.setItem('selectedBooks', JSON.stringify([])); 
+      };
     return (
-      <div className='d-flex flex-row w-100 justify-content-center'>
+      <div className='d-flex flex-row w-100 justify-content-between mt-5'>
+        <div className='d-flex flex-row justify-content-center ms-5 flex-wrap gap-5'>
          {books.map((book) => (
           
-        <Card style={{ width: '16rem' }}>
+        <Card style={{ width: '15rem'}}>
           <Card.Img
-            style={{ height: "10rem", width: "16rem", objectFit: "cover" }}
+            style={{ height: "10rem", width: "15rem", objectFit: "cover" }}
             variant="top"
             src={book?.volumeInfo?.imageLinks?.thumbnail || myimg}
           />
           <Card.Body>
             <Card.Title>{book?.volumeInfo?.title}</Card.Title>
-            <Card.Title>{book?.saleInfo?.retailPrice?.amount}</Card.Title>
+            <Card.Title>{book?.saleInfo?.retailPrice?.amount || 100}</Card.Title>
             <div className='d-flex flex-row align-items-center justify-content-center'>
               <div className='hesapbtn me-3'> <FontAwesomeIcon icon={faPlus} className='btn'  onClick={() => increase(book.id)} /></div>
                 
@@ -88,8 +93,9 @@ const Payy = () => {
               <Button className='button1 card-footer' onClick={() => removeBook(book.id)}>Sil</Button>
           </Card.Body>
         </Card>))}
-        <div>
-        <table className="table ">
+        </div>
+        <div  className='me-5 d-flex  flex-column '>
+        <table className="table d-flex justify-content-center me-5 ">
       <tbody>
         <tr className="text-end">
           <th className="text-start">Toplam Tutar:</th>
@@ -118,9 +124,14 @@ const Payy = () => {
               TL</span>
           </td>
         </tr>
-        <button className='button'onClick={() => navigate("/Login")}>Satın Al</button>
+        
       </tbody>
     </table>
+    <div className='d-flex  flex-column w-100 '>
+    <button className='button m-1'onClick={() => navigate("/Login")}>Satın Al</button>
+    <button className='button1 m-1 'onClick={clear}>Sepeti Temizle</button>
+    </div>
+   
         </div>
       </div>
     );

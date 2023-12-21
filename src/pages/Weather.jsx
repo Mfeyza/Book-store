@@ -44,8 +44,8 @@ const Weather = () => {
 };
 
   return (
-    <div >
- <div className="input-group input-group-sm mb-3">
+    <div className='me-4' >
+ <div className="input-group input-group-sm ">
   <input type="text" className="form-control" placeholder='Şehir Ara..' aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
    value={input}
    onChange={handleChange}/>

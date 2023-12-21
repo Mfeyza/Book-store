@@ -8,19 +8,19 @@ import img3 from "../img/anasayfa_1200x390-Yapi-Kredi-Yayinlari-Ozel-Fiyatlar.we
 
 const AdPage = () => {
   return (
-    <div className='d-flex justify-content-center w-100 mt-5 '>
+    <div className='d-flex justify-content-center w-100 mt-3 '>
     <Carousel >
-      <Carousel.Item className='w-100' >
+      <Carousel.Item className='' >
       <img src={img1} alt=""  />
         
       </Carousel.Item>
-      <Carousel.Item className='w-100'>
+      <Carousel.Item className=''>
         <img src={img2} alt="" />
        
        
         
       </Carousel.Item>
-      <Carousel.Item className='w-100'>
+      <Carousel.Item className=''>
        <img src={img3} alt="" />
        
       </Carousel.Item>
