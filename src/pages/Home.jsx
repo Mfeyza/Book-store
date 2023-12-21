@@ -21,7 +21,7 @@ const Home = () => {
   
 console.log(data2);
   return (
-    <div className='kapsayıcı d-flex flex-column '>
+    <div className='kapsayıcı d-flex flex-column w-100 '>
       <Main  book={books} setBooks={setBooks} setLoading={setLoading}/>
      <div className='d-flex flex-row w-100 justify-content-space-between' >
    <Rate />
@@ -33,7 +33,6 @@ console.log(data2);
     
     
 
-  {/* <Rate className="rate" /> */}
 
     
     </div>

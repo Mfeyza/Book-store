@@ -14,7 +14,7 @@ import Payy from "./pages/Payy";
 
 function App() {
   return (
-    <div className="App d-flex  flex-column justify-content-space-between ">
+    <div className="App d-flex  flex-column justify-content-space-between w-100">
       <NavbarBook />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -66,8 +66,9 @@ const Payy = () => {
         localStorage.setItem('selectedBooks', JSON.stringify(updateBooks));
       };
     return (
-      <div className='d-flex flex-row w-100 gap-5'>
+      <div className='d-flex flex-row w-100 justify-content-center'>
          {books.map((book) => (
+          
         <Card style={{ width: '16rem' }}>
           <Card.Img
             style={{ height: "10rem", width: "16rem", objectFit: "cover" }}
@@ -77,42 +78,44 @@ const Payy = () => {
           <Card.Body>
             <Card.Title>{book?.volumeInfo?.title}</Card.Title>
             <Card.Title>{book?.saleInfo?.retailPrice?.amount}</Card.Title>
-            <div className='d-flex flex-row align-items-center'>
-                 <FontAwesomeIcon icon={faPlus}  onClick={() => increase(book.id)} />
-                 <p>{book.quantity}</p>
-                <FontAwesomeIcon icon={faMinus} onClick={() => decrease(book.id)} />
+            <div className='d-flex flex-row align-items-center justify-content-center'>
+              <div className='hesapbtn me-3'> <FontAwesomeIcon icon={faPlus} className='btn'  onClick={() => increase(book.id)} /></div>
+                
+                <div className='mt-3 fs-5'><p><strong>{book.quantity}</strong></p></div> 
+                <div className='hesapbtn ms-3'> <FontAwesomeIcon className='btn' icon={faMinus} onClick={() => decrease(book.id)} /></div>
+               
               </div>
               <Button className='button1 card-footer' onClick={() => removeBook(book.id)}>Sil</Button>
           </Card.Body>
         </Card>))}
         <div>
-        <table className="table">
+        <table className="table ">
       <tbody>
         <tr className="text-end">
-          <th className="text-start">Subtotal</th>
+          <th className="text-start">Toplam Tutar:</th>
           <td>
-            $<span className="subtotal">{subTotal.toFixed(2)}</span>
+            <span className="subtotal">{subTotal.toFixed(2)}</span>TL
           </td>
         </tr>
         <tr className="text-end">
-          <th className="text-start">Discount(20%)</th>
+          <th className="text-start">İndirim(20%)</th>
           <td>
-            $<span className="tax">{(subTotal * discount).toFixed(2)}</span>
+            <span className="tax">{(subTotal * discount).toFixed(2)}</span> TL
           </td>
         </tr>
         <tr className="text-end">
-          <th className="text-start">Shipping</th>
+          <th className="text-start">Kargo Ücreti</th>
           <td>
-            $<span className="shipping">{shipping.toFixed(2)}</span>
+            <span className="shipping">{shipping.toFixed(2)}</span> TL
           </td>
         </tr>
         <tr className="text-end">
-          <th className="text-start">Total</th>
+          <th className="text-start">Ödenecek Tutar:</th>
           <td>
-            $
+            
             <span className="total">
               {(subTotal + subTotal * discount + shipping).toFixed(2)}
-            </span>
+              TL</span>
           </td>
         </tr>
         <button className='button'onClick={() => navigate("/Login")}>Satın Al</button>

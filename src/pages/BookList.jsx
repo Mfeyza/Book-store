@@ -42,16 +42,13 @@ const BookList = ({ book, setBook,loading }) => {
               src={book?.volumeInfo?.imageLinks?.thumbnail || myimg}
               style={{ height: "16rem", width: "16rem", objectFit: "cover" }}
             />
-            <Card.Body>
+            <Card.Body className="d-flex flex-column justify-content-between">
               <Card.Title>{book?.volumeInfo?.title}</Card.Title>
               <Card.Text> {book?.volumeInfo?.authors}</Card.Text>
               <Card.Text> {book?.volumeInfo?.publishedDate}</Card.Text>
-              <Card.Text> {book?.saleInfo?.retailPrice.amount || "100"}</Card.Text>
+              <Card.Text className="card-footer"> <strong>{book?.saleInfo?.retailPrice?.amount || "100"} TL</strong></Card.Text>
               
 
-              <Card.Text>
-               
-              </Card.Text>
             
               
             </Card.Body>

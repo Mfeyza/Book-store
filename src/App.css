@@ -11,9 +11,11 @@
     
 }
 .App{
+	max-width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: space-between;
+	
 }
 
 
@@ -48,10 +50,12 @@ body{
 
 }
 .kapsayıcı{
-    /* min-height: 100vh; */
+    max-height: 100vh;
+	max-width: 100%;
 	width: 100%;
 	flex-grow: 1;
     display: flex;
+	
 
 }
 .desc {
@@ -237,3 +241,22 @@ span.page-link{
 	     -o-transition: 50ms linear;
 	        transition: 50ms linear;
 }
+.card{
+	box-shadow: rgba(82, 9, 9, 0.3) 8px 19px 38px, rgba(31, 6, 107, 0.432) 9px 15px 12px;
+	background-color: #d5dcd528 !important;
+
+	
+}
+.hesapbtn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 20px;   
+	height: 20px;  
+	border-radius: 50%; 
+	background-color: #38865e;
+	color: white;
+  }
+  .details{
+	border: none !important;
+  }

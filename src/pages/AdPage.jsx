@@ -8,7 +8,7 @@ import img3 from "../img/anasayfa_1200x390-Yapi-Kredi-Yayinlari-Ozel-Fiyatlar.we
 
 const AdPage = () => {
   return (
-    <div className='d-flex justify-content-center  mt-5 '>
+    <div className='d-flex justify-content-center w-100 mt-5 '>
     <Carousel >
       <Carousel.Item className='w-100' >
       <img src={img1} alt=""  />
