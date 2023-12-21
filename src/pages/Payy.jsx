@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom";
 import myimg from "../img/old-books-2.jpg";
+import sepetimg from "../img/ayyildiz.jpg"
 
 import axios from "axios";
 
@@ -28,11 +29,17 @@ const Payy = () => {
         setLoading(false);
       }, []);
     if (loading) {
-      return <p>Loading...</p>;
+      return <div>
+        <p>Loading...</p>;
+   
+      </div> 
     }
   
     if (!books.length) {
-      return <p>Sepete Ürün Ekle.</p>;
+      return <div className='d-flex justify-content-center align-items-center flex-column'>
+        <p>Sepete Ürün Ekle.</p>
+        <img src={sepetimg} alt=""className='w-50 h-50 ' />;
+      </div> 
     }
   
     const discount = 0.20;
